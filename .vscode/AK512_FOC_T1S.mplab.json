@@ -34,6 +34,7 @@
                 "global.common-include-directories": [
                     "\"src\"",
                     "\"src/hal\"",
+                    "\"src/mc\"",
                     "\"src/T1S/inc\"",
                     "\"dsPIC33AK512MC510_MCLV48V300W_T1S\""
                 ],

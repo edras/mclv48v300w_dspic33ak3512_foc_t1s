@@ -1,0 +1,130 @@
+{
+    "scope_view": [
+        {
+            "variable": "mcApp.controlScheme.iabc.a",
+            "sfr": false,
+            "trigger": false,
+            "enable": true,
+            "color": "#0000FF",
+            "gain": "1000",
+            "offset": "0"
+        },
+        {
+            "variable": "mcApp.controlScheme.iabc.b",
+            "sfr": false,
+            "trigger": false,
+            "enable": true,
+            "color": "#FF0000",
+            "gain": "1000",
+            "offset": "0"
+        },
+        {
+            "variable": "mcApp.PWMDuty.dutycycle1",
+            "sfr": false,
+            "trigger": false,
+            "enable": true,
+            "color": "#000000",
+            "gain": "0.1",
+            "offset": "0"
+        },
+        {
+            "variable": "mcApp.PWMDuty.dutycycle2",
+            "sfr": false,
+            "trigger": false,
+            "enable": true,
+            "color": "#0000FF",
+            "gain": "0.1",
+            "offset": "0"
+        },
+        {
+            "variable": "mcApp.PWMDuty.dutycycle3",
+            "sfr": false,
+            "trigger": false,
+            "enable": true,
+            "color": "#FF0000",
+            "gain": "0.1",
+            "offset": "0"
+        },
+        {
+            "variable": "mcApp.controlScheme.estimator.qTheta",
+            "sfr": false,
+            "trigger": true,
+            "enable": true,
+            "color": "#FF00FF",
+            "gain": "0.05",
+            "offset": "-5000"
+        },
+        {
+            "variable": "mcApp.controlScheme.estimator.BEMFAlphaBeta.alpha",
+            "sfr": false,
+            "trigger": false,
+            "enable": false,
+            "color": "Orange",
+            "gain": "100",
+            "offset": "0"
+        },
+        {
+            "variable": "mcApp.controlScheme.estimator.BEMFAlphaBeta.beta",
+            "sfr": false,
+            "trigger": false,
+            "enable": false,
+            "color": "#800080",
+            "gain": "100",
+            "offset": "0"
+        }
+    ],
+    "watch_view": [
+        {
+            "variable": "mcApp.motorInputs.measurePot",
+            "type": "int16",
+            "sfr": false,
+            "live": true,
+            "value": 31.0,
+            "scaling": 0.0244140625,
+            "offset": 0.0,
+            "unit": "%"
+        },
+        {
+            "variable": "mcApp.controlScheme.idq.d",
+            "type": "float",
+            "sfr": false,
+            "live": true,
+            "value": -0.013293460011482239,
+            "scaling": 1.0,
+            "offset": 0.0,
+            "unit": ""
+        },
+        {
+            "variable": "mcApp.controlScheme.idq.q",
+            "type": "float",
+            "sfr": false,
+            "live": true,
+            "value": 0.34491053223609924,
+            "scaling": 1.0,
+            "offset": 0.0,
+            "unit": ""
+        },
+        {
+            "variable": "mcApp.controlScheme.ctrlParam.speedRef",
+            "type": "float",
+            "sfr": false,
+            "live": true,
+            "value": 521.97265625,
+            "scaling": 1.0,
+            "offset": 0.0,
+            "unit": "RPM"
+        }
+    ],
+    "view_mode": "Both",
+    "sample_control": {
+        "triggerAction": "off",
+        "sampleTime": 2,
+        "sampleFreq": 20.0
+    },
+    "trigger_control": {
+        "trigger_mode": 1,
+        "trigger_edge": 1,
+        "trigger_level": 0.0,
+        "trigger_delay": -50
+    }
+}
