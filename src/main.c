@@ -39,6 +39,10 @@ static volatile uint8_t mcInitDone = 0;
 /* Direction change state: stop motor, toggle direction, then auto-restart */
 static uint8_t directionChangePending = 0;
 
+/* variable to store FOC elapsed time */
+static volatile uint32_t timerFOC = 0;
+
+
 int main(void)
 {
     HAL_Init();
@@ -129,9 +133,18 @@ void ADC2_ChannelCallback(enum ADC2_CHANNEL channel, uint16_t adcVal)
     if (channel != ADC2_POT) return;
     if (!mcInitDone) return;
 
+    /* Start FOC timer */
+    SCCP1_Timer_Start();
+
     /* Execute FOC control loop */
     MC_APP_ISR();
 
     /* Update X2Cscope sample buffer */
     X2Cscope_Update();
+
+    /* Measure elapsed time for FOC loop */
+    SCCP1_Timer_Stop();
+    timerFOC = SCCP1_Timer_CounterGet(); /* Store elapsed time for FOC loop */
+    timerFOC *= 40; /* Convert to nanoseconds (40ns per tick @ 200MHz) */
+    CCP1TMR = 0; /* Reset timer for next FOC loop */  
 }

@@ -130,8 +130,8 @@ void MC_HAL_OverCurrentProtectionInit(void)
     DAC3CMPbits.HYSSEL = 3;  /* 45 mV hysteresis */
     DAC3CMPbits.CBE = 0;     /* Blanking disabled */
     DAC3CMPbits.FLTREN = 0;  /* Digital filter disabled */
-    DAC3CMPbits.CMPPOL = 1;  /* Output inverted */
-    DAC3CMPbits.INPSEL = 3;  /* Positive input = CMP3D (bus current) */
+    DAC3CMPbits.CMPPOL = 0;  /* Output non-inverted: HIGH when IN+ > IN- */
+    DAC3CMPbits.INPSEL = 0;  /* Positive input = CMP3A / RA5 (OPA3 bus current output) */
     DAC3CMPbits.INNSEL = 0;  /* Negative input = DACx reference */
 
     /* --- DAC3DAT: Set overcurrent threshold --- */
@@ -151,21 +151,34 @@ void MC_HAL_OverCurrentProtectionInit(void)
      * Mode: Cycle-by-cycle (auto-terminate at EOC when fault clears)
      * Source: CMP3 output (bit 30 in PGxF1PCI2)
      * 
-     * PGxF1PCI1 = 0x13001000:
+     * PGxF1PCI1 = 0x03001000:
      *   - TERM = 1 (auto-terminate: cycle-by-cycle)  [bits 14:12]
      *   - ACP  = 3 (latched acceptance)              [bits 26:24]
-     *   - PPS  = 1 (polarity inverted)               [bit 28]
+     *   - PPS  = 0 (not inverted: active when HIGH)  [bit 28]
      *
      * PGxF1PCI2 = 0x40000000:
      *   - PSS bit 30 = Comparator 3 output
+     *
+     * NOTE: PCI registers must be written with generators OFF.
+     * MCC enables them in PWM_Initialize(), so we disable briefly here.
      *=========================================================================*/
 
-    PG1F1PCI1 = 0x13001000;
+    /* Disable PWM generators to allow PCI register writes */
+    PG1CONbits.ON = 0;
+    PG2CONbits.ON = 0;
+    PG3CONbits.ON = 0;
+
+    PG1F1PCI1 = 0x03001000;
     PG1F1PCI2 = 0x40000000;
 
-    PG2F1PCI1 = 0x13001000;
+    PG2F1PCI1 = 0x03001000;
     PG2F1PCI2 = 0x40000000;
 
-    PG3F1PCI1 = 0x13001000;
+    PG3F1PCI1 = 0x03001000;
     PG3F1PCI2 = 0x40000000;
+
+    /* Re-enable PWM generators */
+    PG1CONbits.ON = 1;
+    PG2CONbits.ON = 1;
+    PG3CONbits.ON = 1;
 }

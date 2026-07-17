@@ -39,12 +39,12 @@
                     "\"dsPIC33AK512MC510_MCLV48V300W_T1S\""
                 ],
                 "compiler.isolate-each-function": true,
-                "compiler.optimization-level": "-O1",
+                "compiler.optimization-level": "-O3",
                 "compiler.place-data-into-section": true,
                 "linker.heap-size": "0",
                 "linker.remove-unused-sections": true,
                 "compiler++.isolate-each-function": true,
-                "compiler++.optimization-level": "-O1",
+                "compiler++.optimization-level": "-O3",
                 "compiler.keep-inline": true
             }
         },
@@ -84,7 +84,8 @@
                 "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/system/src/pins.c",
                 "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/uart/src/uart1.c",
                 "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/system/src/reset.c",
-                "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/cmp/src/cmp3.c"
+                "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/cmp/src/cmp3.c",
+                "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/timer/src/sccp1.c"
             ]
         }
     ]

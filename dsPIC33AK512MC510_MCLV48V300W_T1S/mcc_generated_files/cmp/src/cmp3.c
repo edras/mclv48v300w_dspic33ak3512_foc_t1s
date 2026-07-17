@@ -76,7 +76,7 @@ void CMP3_Initialize(void)
     DACCTRL1 = 0x3F7F0000UL; //FCLKDIV 1:1; DNLADJ 0x0; SIDL disabled; ON disabled; NEGINLADJ 127; POSINLADJ 63; RREN disabled; 
     DACCTRL2 = 0x8A0001UL; //TMODTIME 1; SSTIME 138; 
     DAC3CON = 0x800CUL; //DACOEN disabled; UPDTMDIS disabled; IRQM Interrupts are disabled; DACEN enabled; UPDREQ disabled; UPDTRG Any write(s) to DACDAT or SLPDAT sets the UPDATE bit immediately; TMCB 0; 
-    DAC3CMP = 0x18UL; //INNSEL DACx; INPSEL CMP3D; CMPSTAT disabled; FLTREN disabled; CBE disabled; HYSSEL No hysteresis is selected; HYSPOL Rising Edge; 
+    DAC3CMP = 0x0UL; //INNSEL DACx; INPSEL CMP3A; CMPSTAT disabled; FLTREN disabled; CBE disabled; HYSSEL No hysteresis is selected; HYSPOL Rising Edge; 
 
     //Slope Settings
     DAC3DAT = 0xF3200CDUL; //DACLOW 205; DACDAT 3890; 

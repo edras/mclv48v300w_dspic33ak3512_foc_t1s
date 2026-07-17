@@ -44,6 +44,7 @@
 #include "../../opa/opa2.h"
 #include "../../opa/opa3.h"
 #include "../../pwm_hs/pwm.h"
+#include "../../timer/sccp1.h"
 #include "../../spi_host/spi1.h"
 #include "../../timer/tmr1.h"
 #include "../../uart/uart1.h"
@@ -65,6 +66,7 @@ void SYSTEM_Initialize(void)
     OPA2_Initialize();
     OPA3_Initialize();
     PWM_Initialize();
+    SCCP1_Timer_Initialize();
     SPI1_Initialize();
     TMR1_Initialize();
     UART1_Initialize();
