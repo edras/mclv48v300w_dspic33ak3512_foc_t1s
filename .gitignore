@@ -10,3 +10,4 @@ _build/
 cmake/**/.generated/*
 cmake/**/CMake*
 out/
+pyx2cscope.log
