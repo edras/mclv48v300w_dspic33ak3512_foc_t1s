@@ -79,7 +79,7 @@
             "type": "int16",
             "sfr": false,
             "live": true,
-            "value": 31.0,
+            "value": 2119.0,
             "scaling": 0.0244140625,
             "offset": 0.0,
             "unit": "%"
@@ -89,7 +89,7 @@
             "type": "float",
             "sfr": false,
             "live": true,
-            "value": -0.013293460011482239,
+            "value": 0.18281391263008118,
             "scaling": 1.0,
             "offset": 0.0,
             "unit": ""
@@ -99,7 +99,7 @@
             "type": "float",
             "sfr": false,
             "live": true,
-            "value": 0.34491053223609924,
+            "value": 0.3016957640647888,
             "scaling": 1.0,
             "offset": 0.0,
             "unit": ""
@@ -109,10 +109,30 @@
             "type": "float",
             "sfr": false,
             "live": true,
-            "value": 521.97265625,
+            "value": 2051.8017578125,
             "scaling": 1.0,
             "offset": 0.0,
             "unit": "RPM"
+        },
+        {
+            "variable": "timerFOC",
+            "type": "uint32",
+            "sfr": false,
+            "live": true,
+            "value": 39880.0,
+            "scaling": 0.001,
+            "offset": 0.0,
+            "unit": "us"
+        },
+        {
+            "variable": "DACDAT",
+            "type": "uint16",
+            "sfr": true,
+            "live": false,
+            "value": 2978.0,
+            "scaling": 1.0,
+            "offset": 0.0,
+            "unit": ""
         }
     ],
     "view_mode": "Both",
