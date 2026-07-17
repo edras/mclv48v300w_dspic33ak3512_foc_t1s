@@ -1,14 +1,17 @@
 /**
- * MAIN Generated Driver Header File
+ * CMP Generated Driver Types Header File
  * 
- * @file      system.c
- *            
- * @ingroup   systemdriver
- *            
- * @brief     This is the generated driver header file for the System driver
- *            
+ * @file      cmp_types.h
+ * 
+ * @ingroup   clockdriver
+ * 
+ * @brief     This is the generated driver types header file for the CMP driver
+ *
+ * @version   PLIB Version 1.1.5
+ *
  * @skipline  Device : dsPIC33AK512MC510
 */
+
 /*
 © [2026] Microchip Technology Inc. and its subsidiaries.
 
@@ -30,48 +33,36 @@
     THIS SOFTWARE.
 */
 
-#include "../system.h"
-#include "../clock.h"
-#include "../pins.h"
-#include "../../adc/adc1.h"
-#include "../../adc/adc2.h"
-#include "../../adc/adc3.h"
-#include "../../cmp/cmp3.h"
-#include "../../dma/dma.h"
-#include "../dmt.h"
-#include "../../i2c_host/i2c3.h"
-#include "../../opa/opa1.h"
-#include "../../opa/opa2.h"
-#include "../../opa/opa3.h"
-#include "../../pwm_hs/pwm.h"
-#include "../../spi_host/spi1.h"
-#include "../../timer/tmr1.h"
-#include "../../uart/uart1.h"
-#include "../interrupt.h"
+#ifndef CMP_TYPES_H
+#define CMP_TYPES_H
 
-
-void SYSTEM_Initialize(void)
-{
-    CLOCK_Initialize();
-    PINS_Initialize();
-    ADC1_Initialize();
-    ADC2_Initialize();
-    ADC3_Initialize();
-    CMP3_Initialize();
-    DMA_Initialize();
-    DMT_Initialize();
-    I2C3_Initialize();
-    OPA1_Initialize();
-    OPA2_Initialize();
-    OPA3_Initialize();
-    PWM_Initialize();
-    SPI1_Initialize();
-    TMR1_Initialize();
-    UART1_Initialize();
-    INTERRUPT_GlobalEnable();
-    INTERRUPT_Initialize();
-}
 
 /**
- End of File
+ @ingroup  clockdriver
+ @enum     CMP_DAC_TRANSISION_MODE
+ @brief    This enum is used to set the transision mode between smooth 
+           and slow transision or fast and sharp transision to new data values
 */
+enum CMP_DAC_TRANSISION_MODE
+{
+    CMP_DAC_TRANSISION_MODE_ENABLED = 0U, /**< Smoother and slower transision to the target value */
+    CMP_DAC_TRANSISION_MODE_DISABLED = 1U, /**< Faster transision to the target value and ripple may be introduced  */
+    
+};
+
+/**
+ @ingroup  clockdriver
+ @enum     CMP_DAC_SLOPE_UPDATE_MODE
+ @brief    CMP slope data registers update mode
+ @note     Applicable in slope mode
+*/
+enum CMP_DAC_SLOPE_UPDATE_MODE
+{
+    CMP_DAC_SLOPE_UPDATE_IMMIDIATE = 0U, /**< Updates slope related data registers immidiately */
+    CMP_DAC_SLOPE_UPDATE_TRIGGERED = 1U, /**< Updates slope related data registers during the external trigger */
+    
+};
+
+#endif // CMP_TYPES_H
+
+

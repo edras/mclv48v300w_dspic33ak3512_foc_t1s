@@ -51,16 +51,17 @@
 void CLOCK_Initialize(void)
 {
     /*  
-        System Clock Source                             :  PLL1 VCO Divider output
+        System Clock Source                             :  PLL1 Out output
         System/Generator 1 frequency (Fosc)             :  200 MHz
         
         Clock Generator 2 frequency                     : 8 MHz
         Clock Generator 3 frequency                     : 8 MHz
-        Clock Generator 5 frequency                     : 200 MHz
+        Clock Generator 5 frequency                     : 400 MHz
         Clock Generator 6 frequency                     : 100 MHz
+        Clock Generator 7 frequency                     : 8 MHz
         
         PLL 1 frequency                                 : 200 MHz
-        PLL 1 VCO Out frequency                         : 200 MHz
+        PLL 1 VCO Out frequency                         : 400 MHz
 
     */
     
@@ -98,8 +99,8 @@ void CLOCK_Initialize(void)
 #endif
     
     //Configure VCO Divider
-    // INTDIV 4; 
-    VCO1DIV = 0x40000UL;
+    // INTDIV 2; 
+    VCO1DIV = 0x20000UL;
     //enable PLL VCO divider
     PLL1CONbits.DIVSWEN = 1U;
 #ifndef __MPLAB_DEBUGGER_SIMULATOR     
@@ -109,8 +110,8 @@ void CLOCK_Initialize(void)
     //Clearing ON shuts down oscillator when no downstream clkgen or peripheral is requesting the clock
     PLL1CONbits.ON = 0U;
     
-    // NOSC PLL1 VCO Divider output; OE enabled; SIDL disabled; ON enabled; BOSC Backup FRC Oscillator; FSCMEN disabled; DIVSWEN disabled; OSWEN disabled; EXTCFSEL External clock fail detection module #1; EXTCFEN disabled; RIS disabled; SLEEPDLY 8 sys_clk delay; 
-    CLK1CON = 0x29780UL;
+    // NOSC PLL1 Out output; OE enabled; SIDL disabled; ON enabled; BOSC Backup FRC Oscillator; FSCMEN disabled; DIVSWEN disabled; OSWEN disabled; EXTCFSEL External clock fail detection module #1; EXTCFEN disabled; RIS disabled; SLEEPDLY 8 sys_clk delay; 
+    CLK1CON = 0x29580UL;
     // FRACDIV 0; INTDIV 0; 
     CLK1DIV = 0x0UL;
     //enable clock switching
@@ -149,8 +150,8 @@ void CLOCK_Initialize(void)
     while(CLK5CONbits.OSWEN == 1U){};
 #endif
     
-    // NOSC PLL1 VCO Divider output; OE enabled; SIDL disabled; ON enabled; BOSC Backup FRC Oscillator; FSCMEN disabled; DIVSWEN disabled; OSWEN disabled; EXTCFSEL External clock fail detection module #1; EXTCFEN disabled; RIS disabled; SLEEPDLY 8 sys_clk delay; 
-    CLK6CON = 0x29780UL;
+    // NOSC PLL1 Out output; OE enabled; SIDL disabled; ON enabled; BOSC Backup FRC Oscillator; FSCMEN disabled; DIVSWEN disabled; OSWEN disabled; EXTCFSEL External clock fail detection module #1; EXTCFEN disabled; RIS disabled; SLEEPDLY 8 sys_clk delay; 
+    CLK6CON = 0x29580UL;
     // FRACDIV 0; INTDIV 1; 
     CLK6DIV = 0x10000UL;
     //enable divide factors
@@ -164,6 +165,17 @@ void CLOCK_Initialize(void)
 #ifndef __MPLAB_DEBUGGER_SIMULATOR    
     //wait for clock switching complete
     while(CLK6CONbits.OSWEN == 1U){};
+#endif
+    
+    // NOSC FRC Oscillator; OE enabled; SIDL disabled; ON enabled; BOSC Backup FRC Oscillator; FSCMEN disabled; DIVSWEN disabled; OSWEN disabled; EXTCFSEL External clock fail detection module #1; EXTCFEN disabled; RIS disabled; SLEEPDLY 8 sys_clk delay; 
+    CLK7CON = 0x29180UL;
+    // FRACDIV 0x0; INTDIV 0x0; 
+    CLK7DIV = 0x0UL;
+    //enable clock switching
+    CLK7CONbits.OSWEN = 1U;
+#ifndef __MPLAB_DEBUGGER_SIMULATOR    
+    //wait for clock switching complete
+    while(CLK7CONbits.OSWEN == 1U){};
 #endif
     
     

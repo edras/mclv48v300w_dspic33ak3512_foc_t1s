@@ -5,6 +5,9 @@
 
 #include "mcc_generated_files/system/system.h"
 #include "mcc_generated_files/system/pins.h"
+#include "mcc_generated_files/adc/adc1.h"
+#include "mcc_generated_files/adc/adc2.h"
+#include "mcc_generated_files/adc/adc3.h"
 
 #define MIKROE_T1S
 

@@ -6,6 +6,7 @@
             "id": "",
             "device": "dsPIC33AK512MC510",
             "imagePath": "./out/AK512_FOC_T1S/default.elf",
+            "toolProperties": "default-tool-base",
             "tool": "Curiosity/Starter Kits (PKOB4)",
             "packs": [
                 {
@@ -15,14 +16,20 @@
                 }
             ],
             "fileSet": "default",
-            "toolchain": "default-XC-DSC"
+            "toolchain": "default-XC-DSC",
+            "userVariables": "default-uservariables"
         }
     ],
     "propertyGroups": [
         {
+            "name": "default-uservariables",
+            "type": "uservariables",
+            "properties": {}
+        },
+        {
             "name": "default-XC-DSC",
             "type": "toolchain",
-            "provider": "microchip.toolchains:xc-dsc@4.00.00",
+            "provider": "microchip.toolchains:xc-dsc@3.31.01",
             "properties": {
                 "global.common-include-directories": [
                     "\"src\"",
@@ -39,6 +46,11 @@
                 "compiler++.optimization-level": "-O1",
                 "compiler.keep-inline": true
             }
+        },
+        {
+            "name": "default-tool-base",
+            "type": "tool",
+            "properties": {}
         }
     ],
     "fileSets": [
@@ -49,7 +61,6 @@
                     "include": "**/*",
                     "exclude": "**/@(build|_build|out|cmake|.vscode)/**/*"
                 },
-                "main.c",
                 "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/opa/src/opa3.c",
                 "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/opa/src/opa2.c",
                 "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/opa/src/opa1.c",
@@ -71,7 +82,8 @@
                 "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/system/src/system.c",
                 "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/system/src/pins.c",
                 "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/uart/src/uart1.c",
-                "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/system/src/reset.c"
+                "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/system/src/reset.c",
+                "dsPIC33AK512MC510_MCLV48V300W_T1S/mcc_generated_files/cmp/src/cmp3.c"
             ]
         }
     ]

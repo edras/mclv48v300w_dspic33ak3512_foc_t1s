@@ -105,8 +105,8 @@ void PWM_Initialize (void)
     PG1DC = 0x0UL;
     // DCA 0x0; 
     PG1DCA = 0x0UL;
-    // DTL 960; DTH 960; 
-    PG1DT = 0x3C003C0UL;
+    // DTL 4800; DTH 4800; 
+    PG1DT = 0x12C012C0UL;
     // ADTR1EN1 enabled; ADTR1EN2 disabled; ADTR1EN3 disabled; ADTR1PS 1:1; ADTR1OFS None; DACTREN1 disabled; DACTREN2 disabled; PGTRGSEL EOC event; UPDTRG Duty Cycle; PWMPCI disabled; IEVTSEL EOC; SIEN disabled; FFIEN disabled; CLIEN disabled; FLT1IEN disabled; FLT2IEN disabled; 
     PG1EVT1 = 0x80001UL;
     // ADTR2EN1 enabled; ADTR2EN2 disabled; ADTR2EN3 disabled; ADTR2PS 1:1; ADTR2OFS None; CAPTRPS disabled; CAPTROFS disabled; 
@@ -163,8 +163,8 @@ void PWM_Initialize (void)
     PG2DC = 0x0UL;
     // DCA 0x0; 
     PG2DCA = 0x0UL;
-    // DTL 960; DTH 960; 
-    PG2DT = 0x3C003C0UL;
+    // DTL 4800; DTH 4800; 
+    PG2DT = 0x12C012C0UL;
     // ADTR1EN1 disabled; ADTR1EN2 disabled; ADTR1EN3 disabled; ADTR1PS 1:1; ADTR1OFS None; DACTREN1 disabled; DACTREN2 disabled; PGTRGSEL EOC event; UPDTRG Duty Cycle; PWMPCI disabled; IEVTSEL EOC; SIEN disabled; FFIEN disabled; CLIEN disabled; FLT1IEN disabled; FLT2IEN disabled; 
     PG2EVT1 = 0x80000UL;
     // ADTR2EN1 disabled; ADTR2EN2 disabled; ADTR2EN3 disabled; ADTR2PS 1:1; ADTR2OFS None; CAPTRPS disabled; CAPTROFS disabled; 
@@ -221,8 +221,8 @@ void PWM_Initialize (void)
     PG3DC = 0x0UL;
     // DCA 0x0; 
     PG3DCA = 0x0UL;
-    // DTL 960; DTH 960; 
-    PG3DT = 0x3C003C0UL;
+    // DTL 4800; DTH 4800; 
+    PG3DT = 0x12C012C0UL;
     // ADTR1EN1 disabled; ADTR1EN2 disabled; ADTR1EN3 disabled; ADTR1PS 1:1; ADTR1OFS None; DACTREN1 disabled; DACTREN2 disabled; PGTRGSEL EOC event; UPDTRG Duty Cycle; PWMPCI disabled; IEVTSEL EOC; SIEN disabled; FFIEN disabled; CLIEN disabled; FLT1IEN disabled; FLT2IEN disabled; 
     PG3EVT1 = 0x80000UL;
     // ADTR2EN1 disabled; ADTR2EN2 disabled; ADTR2EN3 disabled; ADTR2PS 1:1; ADTR2OFS None; CAPTRPS disabled; CAPTROFS disabled; 
@@ -289,8 +289,8 @@ void PWM_Initialize (void)
     LOGCONF = 0x0UL;
     // MDC 0; 
     MDC = 0x0UL;
-    // MPER 79984; 
-    MPER = 0x13870UL;
+    // MPER 159984; 
+    MPER = 0x270F0UL;
     // MPHASE 0x0; 
     MPHASE = 0x0UL;
     // MCLKSEL Clock Generator 5; DIVSEL 1:2; LOCK disabled; 

@@ -46,26 +46,26 @@ extern const struct PWM_HS_INTERFACE PWM_HS;
   @brief    This macro is used to read the input clock frequency (in Hz) for 
             Master settings.
 */
-#define PWM_MASTER_CLOCK_FREQUENCY_IN_HZ        200000000UL
+#define PWM_MASTER_CLOCK_FREQUENCY_IN_HZ        400000000UL
 
 /** 
   @ingroup  pwmdriver
   @brief    This macro is used to read the input clock frequency (in Hz) for 
             PWM Generator 1.
 */
-#define PWM_GENERATOR_1_CLOCK_FREQUENCY_IN_HZ        200000000UL
+#define PWM_GENERATOR_1_CLOCK_FREQUENCY_IN_HZ        400000000UL
 /** 
   @ingroup  pwmdriver
   @brief    This macro is used to read the input clock frequency (in Hz) for 
             PWM Generator 2.
 */
-#define PWM_GENERATOR_2_CLOCK_FREQUENCY_IN_HZ        200000000UL
+#define PWM_GENERATOR_2_CLOCK_FREQUENCY_IN_HZ        400000000UL
 /** 
   @ingroup  pwmdriver
   @brief    This macro is used to read the input clock frequency (in Hz) for 
             PWM Generator 3.
 */
-#define PWM_GENERATOR_3_CLOCK_FREQUENCY_IN_HZ        200000000UL
+#define PWM_GENERATOR_3_CLOCK_FREQUENCY_IN_HZ        400000000UL
 
 /**
  * @ingroup  pwmdriver
