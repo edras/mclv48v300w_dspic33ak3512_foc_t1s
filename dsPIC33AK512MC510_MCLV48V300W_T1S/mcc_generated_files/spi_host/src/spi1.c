@@ -77,9 +77,9 @@ struct SPI1_HOST_CONFIG
 static const struct SPI1_HOST_CONFIG config[] = {  
                                         { 
                                             /*Configuration setting for HOST_CONFIG.
-                                            SPI Mode : Mode 0, Sampled at : End, Clock Frequency : 16666.667 kHz*/
-                                            0x2,//SPI1BRG
-                                            0x321,//SPI1CON1
+                                            SPI Mode : Mode 0, Sampled at : End, Clock Frequency : 20000 kHz*/
+                                            0x4,//SPI1BRG
+                                            0x325,//SPI1CON1
                                         },
                                     };
 
@@ -97,8 +97,8 @@ void SPI1_Initialize (void)
     SPI1BRG = 0x0;
     // SPIURDT 0x0; 
     SPI1URDT = 0x0;
-    // ENHBUF enabled; SPIFE Frame Sync pulse precedes; MCLKEN Standard Speed Peripheral Clock; DISSCK disabled; DISSDI disabled; MSTEN Host; CKP Idle:Low, Active:High; SSEN disabled; CKE Idle to Active; SMP Middle; MODE16 disabled; MODE32 disabled; DISSDO disabled; SIDL disabled; ON disabled; FRMCNT 0x0; FRMSYPW One clock wide; MSSEN disabled; FRMPOL disabled; FRMSYNC disabled; FRMEN disabled; AUDMOD I2S; URDTEN disabled; AUDMONO stereo; IGNTUR disabled; IGNROV disabled; SPISGNEXT not sign-extended; AUDEN disabled; 
-    SPI1CON1 = 0x21;
+    // ENHBUF enabled; SPIFE Frame Sync pulse precedes; MCLKEN Clock Generator 9; DISSCK disabled; DISSDI disabled; MSTEN Host; CKP Idle:Low, Active:High; SSEN disabled; CKE Idle to Active; SMP Middle; MODE16 disabled; MODE32 disabled; DISSDO disabled; SIDL disabled; ON disabled; FRMCNT 0x0; FRMSYPW One clock wide; MSSEN disabled; FRMPOL disabled; FRMSYNC disabled; FRMEN disabled; AUDMOD I2S; URDTEN disabled; AUDMONO stereo; IGNTUR disabled; IGNROV disabled; SPISGNEXT not sign-extended; AUDEN disabled; 
+    SPI1CON1 = 0x25;
 }
 
 void SPI1_Deinitialize (void)

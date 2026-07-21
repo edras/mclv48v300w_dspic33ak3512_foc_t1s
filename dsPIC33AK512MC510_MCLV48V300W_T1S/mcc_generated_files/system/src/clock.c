@@ -59,6 +59,7 @@ void CLOCK_Initialize(void)
         Clock Generator 5 frequency                     : 400 MHz
         Clock Generator 6 frequency                     : 100 MHz
         Clock Generator 7 frequency                     : 8 MHz
+        Clock Generator 9 frequency                     : 200 MHz
         Clock Generator 13 frequency                     : 200 MHz
         
         PLL 1 frequency                                 : 200 MHz
@@ -177,6 +178,17 @@ void CLOCK_Initialize(void)
 #ifndef __MPLAB_DEBUGGER_SIMULATOR    
     //wait for clock switching complete
     while(CLK7CONbits.OSWEN == 1U){};
+#endif
+    
+    // NOSC PLL1 Out output; OE enabled; SIDL disabled; ON enabled; BOSC Backup FRC Oscillator; FSCMEN disabled; DIVSWEN disabled; OSWEN disabled; EXTCFSEL External clock fail detection module #1; EXTCFEN disabled; RIS disabled; SLEEPDLY 8 sys_clk delay; 
+    CLK9CON = 0x29580UL;
+    // FRACDIV 0x0; INTDIV 0x0; 
+    CLK9DIV = 0x0UL;
+    //enable clock switching
+    CLK9CONbits.OSWEN = 1U;
+#ifndef __MPLAB_DEBUGGER_SIMULATOR    
+    //wait for clock switching complete
+    while(CLK9CONbits.OSWEN == 1U){};
 #endif
     
     // NOSC PLL1 Out output; OE enabled; SIDL disabled; ON enabled; BOSC Backup FRC Oscillator; FSCMEN disabled; DIVSWEN disabled; OSWEN disabled; EXTCFSEL External clock fail detection module #1; EXTCFEN disabled; RIS disabled; SLEEPDLY 8 sys_clk delay; 

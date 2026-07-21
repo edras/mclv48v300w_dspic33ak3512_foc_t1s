@@ -127,7 +127,7 @@ extern const struct SPI_HOST_INTERFACE SPI1_Host;
 
 enum SPI1_HOST_USER_CONFIG{
      /**Custom name for configuration setting:
-    SPI Mode : Mode 0, Sampled at : End, Clock Frequency : 16666.667 kHz**/
+    SPI Mode : Mode 0, Sampled at : End, Clock Frequency : 20000 kHz**/
     HOST_CONFIG,
     
 };

@@ -57,6 +57,7 @@ enum CLOCK_GENERATOR
     CLOCK_GENERATOR_5 = 5,    /**< Clock Generator 5 */
     CLOCK_GENERATOR_6 = 6,    /**< Clock Generator 6 */
     CLOCK_GENERATOR_7 = 7,    /**< Clock Generator 7 */
+    CLOCK_GENERATOR_9 = 9,    /**< Clock Generator 9 */
     CLOCK_GENERATOR_13 = 13,    /**< Clock Generator 13 */
     
     CLOCK_SYSTEM = 1,    /**< Clock for System */
@@ -66,10 +67,11 @@ enum CLOCK_GENERATOR
     CLOCK_PWM = 5,    /**< Clock for PWM */
     CLOCK_ADC = 6,    /**< Clock for ADC */
     CLOCK_CMP_DAC = 7,    /**< Clock for CMP_DAC */
+    CLOCK_SPI = 9,    /**< Clock for SPI */
     CLOCK_CCP = 13,    /**< Clock for CCP */
     CLOCK_REFO1 = 13,    /**< Clock for REFO1 */
     
-    CLOCK_GENERATOR_MAX = 7
+    CLOCK_GENERATOR_MAX = 8
 };
 
 /**
@@ -85,6 +87,7 @@ enum CLOCK_FAIL_STATUS_MASKS
     CLOCK_GEN5_FAIL_MASK = 0x10,    /**< Fail mask for Clock Generator 5 */
     CLOCK_GEN6_FAIL_MASK = 0x20,    /**< Fail mask for Clock Generator 6 */
     CLOCK_GEN7_FAIL_MASK = 0x40,    /**< Fail mask for Clock Generator 7 */
+    CLOCK_GEN9_FAIL_MASK = 0x100,    /**< Fail mask for Clock Generator 9 */
     CLOCK_GEN13_FAIL_MASK = 0x1000,    /**< Fail mask for Clock Generator 13 */
     CLOCK_PLL1_FAIL_MASK = 0x1000000,    /**< Fail mask for PLL Generator 1 */
 };
